@@ -1,3 +1,4 @@
+---
 apiVersion: v2
 name: rbih-payments
 description: Helm chart for RBIH payment-gateway and payment-processor

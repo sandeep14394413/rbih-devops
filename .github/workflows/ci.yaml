@@ -1,5 +1,6 @@
+---
 name: CI
-on:
+'on':
   push:
   pull_request:
 
@@ -17,4 +18,5 @@ jobs:
       - name: Helm lint
         run: helm lint charts/rbih-payments
       - name: Render manifests
-        run: helm template rbih-payments charts/rbih-payments > rendered.yaml
+        run: >-
+          helm template rbih-payments charts/rbih-payments > rendered.yaml
