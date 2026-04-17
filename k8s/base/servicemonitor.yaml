@@ -1,0 +1,22 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: rbih-payments
+  namespace: rbih-payments
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - payment-gateway
+          - payment-processor
+  namespaceSelector:
+    matchNames:
+      - rbih-payments
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s

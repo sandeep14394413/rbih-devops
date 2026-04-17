@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: payment-gateway-config
+  namespace: rbih-payments
+data:
+  PAYMENT_PROCESSOR_URL: http://payment-processor:8080

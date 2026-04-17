@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: payment-gateway-config
+  namespace: {{ .Values.namespace }}
+data:
+  PAYMENT_PROCESSOR_URL: http://payment-processor:{{ .Values.processor.service.port }}

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rbih-payments
+  labels:
+    app.kubernetes.io/part-of: rbih-payments
+    app.kubernetes.io/managed-by: kustomize
