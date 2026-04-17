@@ -11,14 +11,18 @@ spec:
     - name: rbih-payments.rules
       rules:
         - alert: PaymentGatewayReplicasUnavailable
-          expr: kube_deployment_status_replicas_unavailable{deployment="payment-gateway",namespace="rbih-payments"} > 0
+          expr: >-
+            kube_deployment_status_replicas_unavailable{deployment="payment-gateway",
+            namespace="rbih-payments"} > 0
           for: 5m
           labels:
             severity: warning
           annotations:
             summary: Payment gateway has unavailable replicas
         - alert: PaymentProcessorReplicasUnavailable
-          expr: kube_deployment_status_replicas_unavailable{deployment="payment-processor",namespace="rbih-payments"} > 0
+          expr: >-
+            kube_deployment_status_replicas_unavailable{deployment="payment-processor",
+            namespace="rbih-payments"} > 0
           for: 5m
           labels:
             severity: warning
